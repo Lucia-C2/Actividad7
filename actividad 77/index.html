@@ -10,13 +10,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', sans-serif; /*Establece la fuente principal del cuerpo*/
     }
     .owl-carousel .item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
+      display: flex; /*Flexbox para organizar los elementos de cada slide del carrusel*/
+      flex-direction: column; /* Apila los elementos verticalmente */
+      align-items: center; /* Centra los elementos horizontalmente */
+      padding: 1rem;  /* Añade un espacio de relleno alrededor del contenido de cada slide */
     }
 
     /* Asegurarse que las imágenes tengan el mismo tamaño */
@@ -24,8 +24,8 @@
       max-width: 100%; /* Aseguramos que la imagen no se pase de los límites */
       height: 200px; /* Definimos una altura constante para todas las imágenes */
       object-fit: cover; /* Las imágenes se ajustan al tamaño sin deformarse */
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
+      border-radius: 0.5rem; /* Añade bordes redondeados a las imágenes */
+      margin-bottom: 1rem; /* Añade un espacio debajo de cada imagen */
     }
   </style>
 </head>
@@ -107,7 +107,7 @@
 
     const contenedorProductos = document.querySelector("#productos-destacados .grid");
     const ropaCarousel = document.querySelector("#ropa-carousel .owl-carousel");
-
+     // Itera sobre el array de productos para generar el HTML de cada producto destacado
     productos.forEach(p => {
       const html = `
         <div class="bg-white rounded-lg shadow-md p-4 flex flex-col justify-between border border-pink-200 hover:border-pink-300">
@@ -123,7 +123,7 @@
       `;
       contenedorProductos.innerHTML += html;
     });
-
+     // Itera sobre el array de productos para generar el HTML de cada item del carrusel de ropa
     productos.forEach(p => {
       const html = `
         <div class="item bg-white rounded-lg shadow-md">
@@ -135,19 +135,19 @@
           <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2">Agregar al carrito</button>
         </div>
       `;
-      ropaCarousel.innerHTML += html;
+      ropaCarousel.innerHTML += html; // Añade el HTML generado al contenedor del carrusel de ropa
     });
-
+     // Inicializa el carrusel Owl Carousel cuando el documento esté listo
     $(document).ready(function () {
       $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        dots: true,
-        responsive: {
-          0: { items: 1 },
-          600: { items: 2 },
-          1000: { items: 3 }
+        loop: true, // Permite que el carrusel se desplace de forma continua
+        margin: 10, // Define el margen entre los items del carrusel
+        nav: true, // Muestra los botones de navegación (anterior/siguiente)
+        dots: true,  // Muestra los puntos de navegación en la parte inferior
+        responsive: { // Configuración responsive para diferentes tamaños de pantalla
+          0: { items: 1 },  // En pantallas pequeñas (ancho 0px), muestra 1 item
+          600: { items: 2 },  // En pantallas medianas (ancho 600px), muestra 2 items
+          1000: { items: 3 } // En pantallas grandes (ancho 1000px), muestra 3 items
         }
       });
     });
