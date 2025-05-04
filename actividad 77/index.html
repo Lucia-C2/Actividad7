@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
-<head>
+<head> /*Contiene los metadatos*/
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tienda Online Lulupa</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> /*Ajusta el ancho del contenido a diferentes tamaños de pantalla*/
+  <title>Tienda Online Lulupa</title> /*Define el título de la pestaña del navegador*/
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/> /*Fuente de Google Fonts*/
+  <script src="https://cdn.tailwindcss.com"></script> /*Importa tailwindCSS para facilitar el diseño del sitio*/
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>/*Añade estilos para el carrusel*/
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/> /*Añade estilos paar el carrusel*/
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', sans-serif;/*Define tipogradía global*/
     }
-    .owl-carousel .item {
+    .owl-carousel .item { /*Define estilo para los elementos del carrusel*/
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -29,13 +29,13 @@
     }
   </style>
 </head>
-<body class="bg-pink-50">
-  <header class="bg-pink-500 text-white py-4 shadow-md">
+<body class="bg-pink-50"> /*Define el encabezado con fondo rosado y título*/
+  <header class="bg-pink-500 text-white py-4 shadow-md"> 
     <div class="container mx-auto px-4">
       <h1 class="text-3xl font-semibold text-center" style="font-family:Verdana;">Tienda de ropa: Lulupa</h1>
     </div>
   </header>
-
+/*Clases de TailwindCSS para estilizar los elementos*/
   <nav class="bg-purple-800 text-white py-3">
     <div class="container mx-auto px-4">
       <div class="flex justify-center space-x-6">
@@ -47,23 +47,23 @@
   </nav>
 
   <main class="container mx-auto py-6 px-4">
-    <section id="productos-destacados" class="mb-8">
+    <section id="productos-destacados" class="mb-8">/*Definición de la cuadricula que contendra cada producto*/
       <h2 class="text-2xl font-semibold text-center mb-4" style="color: #e64a43;">Productos Destacados</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div> /Discposició adaptable a pantallas pequeñas y grandes*/
     </section>
 
-    <section id="ropa-carousel" class="mb-8">
+    <section id="ropa-carousel" class="mb-8"> /*Definición de contenedor para el carrusel*/
       <h2 class="text-2xl font-semibold text-center mb-4" style="color: #e64a43;">Nuestra Ropa</h2>
       <div class="owl-carousel owl-theme"></div>
     </section>
   </main>
 
-  <footer class="bg-purple-800 text-white py-4 mt-8">
+  <footer class="bg-purple-800 text-white py-4 mt-8"> /*Pie de página*/
     <div class="text-center">
       <p>© 2024 Mi Tienda Online. Todos los derechos reservados.</p>
     </div>
   </footer>
-
+/*carga de librerías externas*/
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
@@ -108,7 +108,7 @@
     const contenedorProductos = document.querySelector("#productos-destacados .grid");
     const ropaCarousel = document.querySelector("#ropa-carousel .owl-carousel");
 
-    productos.forEach(p => {
+    productos.forEach(p => { /*Define productos y los muestra dinámicamente en el html*/
       const html = `
         <div class="bg-white rounded-lg shadow-md p-4 flex flex-col justify-between border border-pink-200 hover:border-pink-300">
           <img src="${p.imagen}" alt="${p.nombre}" class="w-full h-48 object-cover rounded-md mb-4">
@@ -137,7 +137,7 @@
       `;
       ropaCarousel.innerHTML += html;
     });
-
+/*Inicializa el carrusel*/
     $(document).ready(function () {
       $('.owl-carousel').owlCarousel({
         loop: true,
