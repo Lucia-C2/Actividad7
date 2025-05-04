@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head> /*configuración inicial de la página*/
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ropa - Tienda Online Lulupa</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> /*Permite adaptación a dispositivos móviles*/
+  <title>Ropa - Tienda Online Lulupa</title> /*Define el texto de la pestaña del navegador*/
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/> /*Fuente externa de Google Fonts*/
+  <script src="https://cdn.tailwindcss.com"></script> /* Utilización de clases de TailwindCSS para estilos sin escribir CSS manualmente*/
 </head>
-<body class="bg-pink-50">
-  <header class="bg-pink-500 text-white py-4 shadow-md">
+<body class="bg-pink-50"> /*Definición de fondo rosa*/
+  <header class="bg-pink-500 text-white py-4 shadow-md"> /*Encabezado con fondo rosa, texto blanco y sombra, con título centralizado*/
     <div class="container mx-auto px-4">
       <h1 class="text-3xl font-semibold text-center">Nuestra Ropa</h1>
     </div>
   </header>
 
-  <nav class="bg-purple-800 text-white py-3">
+  <nav class="bg-purple-800 text-white py-3"> /*Creación ed barra de navegación con enlaces a otras páginas*/
     <div class="container mx-auto px-4">
       <div class="flex justify-center space-x-6">
         <a href="index.html" class="hover:text-pink-300">Inicio</a>
@@ -25,18 +25,17 @@
   </nav>
 
   <main class="container mx-auto py-6 px-4">
-    <section id="ropa" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Aquí se agregarán productos disponibles -->
+    <section id="ropa" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"> /*Definición de contenedor con productos, sistema de cuadriculas*/
     </section>
   </main>
 
-  <footer class="bg-purple-800 text-white py-4 mt-8">
+  <footer class="bg-purple-800 text-white py-4 mt-8"> /*Pie de página*/
     <div class="container mx-auto text-center">
       <p>© 2024 Mi Tienda Online. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <script>
+  <script> /*Scrip para la definición de la lista de productos y detalles*/
     const productos = [
       {
         nombre: "Poleras de hilo",
@@ -77,9 +76,9 @@
 
     const ropaSection = document.querySelector("#ropa");
 
-    productos.forEach(producto => {
-      if (producto.stock) {
-        const productoHTML = `
+    productos.forEach(producto => { /*Recorre la lista*/
+      if (producto.stock) { /*filtra productos*/
+        const productoHTML = /*Genera bloque de HTML para cada profucto*/
           <div class="bg-white rounded-lg shadow-md p-4 flex flex-col transition-transform transform hover:scale-105
                       border border-pink-200 hover:border-pink-300">
             <img src="${producto.imagen}" alt="${producto.nombre}" class="w-full h-48 object-cover rounded-md mb-4">
@@ -90,7 +89,7 @@
                            focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-75">Ver Detalles</a>
           </div>
         `;
-        ropaSection.innerHTML += productoHTML;
+        ropaSection.innerHTML += productoHTML; /*Anade al contenedor*/
       }
     });
   </script>
