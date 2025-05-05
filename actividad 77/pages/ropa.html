@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> <!--configuración inicial de la página-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!--Permite adaptación a dispositivos móviles-->
+  <title>Ropa - Tienda Online Lulupa</title> <!--Define el texto de la pestaña del navegador-->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/> <!--Fuente externa de Google Fonts-->
+  <script src="https://cdn.tailwindcss.com"></script> <!--Utilización de clases de TailwindCSS para estilos sin escribir CSS manualmente-->
+</head>
+<body class="bg-pink-50"> <!--Definición de fondo rosa-->
+  <header class="bg-pink-500 text-white py-4 shadow-md"> <!--Encabezado con fondo rosa, texto blanco y sombra, con título centralizado-->
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-semibold text-center">Nuestra Ropa</h1>
+    </div>
+  </header>
+
+  <nav class="bg-purple-800 text-white py-3"> <!--Creación ed barra de navegación con enlaces a otras páginas-->
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center space-x-6">
+        <a href="../index.html" class="hover:text-pink-300">Inicio</a>
+        <a href="descuentos.html" class="hover:text-pink-300">Descuentos</a>
+        <a href="ropa.html" class="hover:text-pink-300">Ropa</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto py-6 px-4">
+    <section id="ropa" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"> <!--Definición de contenedor con productos, sistema de cuadriculas-->
+    </section>
+  </main>
+
+  <footer class="bg-purple-800 text-white py-4 mt-8"> <!--Pie de página-->
+    <div class="container mx-auto text-center">
+      <p>© 2024 Mi Tienda Online. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script> /*Scrip para la definición de la lista de productos y detalles*/
+    const productos = [
+      {
+        nombre: "Poleras de hilo",
+        descripcion: "Disponible en talle xs, s, m, l y xl. Colores: Amarillo, rosa y verde",
+        precio: 120000,
+        imagen: "../img/polera.jpg",
+        stock: true
+      },
+      {
+        nombre: "Jeans Overside",
+        descripcion: "Disponibles en tallexxs,xs,s,l, m, l, xl, xxl y xxxl",
+        precio: 100000,
+        imagen: "../img/overside.jpg",
+        stock: true
+      },
+      {
+        nombre: "Camiseta Algodón",
+        descripcion: "Disponible en s, m y l.",
+        precio: 25000,
+        imagen: "../img/camiseta.jpg",
+        stock: true
+      },
+      {
+        nombre: "Campera rompeviento",
+        descripcion: "Disponible en talle m, l ,xl y xxl",
+        precio: 200000,
+        imagen: "../img/rompeviento.jpg",
+        stock: true
+      },
+      {
+        nombre: "Vestido Floral",
+        descripcion: "SIN STOCK.",
+        precio: 60000,
+        imagen: "../img/vestido.jpg",
+        stock: false
+      },
+    ];
+
+    const ropaSection = document.querySelector("#ropa");
+
+    productos.forEach(producto => { /*Recorre la lista*/
+      if (producto.stock) { /*filtra productos*/
+        /*Genera bloque de HTML para cada producto*/
+        const productoHTML = `
+          <div class="bg-white rounded-lg shadow-md p-4 flex flex-col transition-transform transform hover:scale-105
+                      border border-pink-200 hover:border-pink-300">
+            <img src="${producto.imagen}" alt="${producto.nombre}" class="w-full h-48 object-cover rounded-md mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2" style="color: #c51162;">${producto.nombre}</h3>
+            <p class="text-gray-600 mb-2">${producto.descripcion}</p>
+            <p class="text-lg font-bold text-pink-600 mb-4">$${producto.precio}</p>
+            <a href="detalle.html?nombre=${encodeURIComponent(producto.nombre)}" class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded transition duration-300 text-center
+                           focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-75">Ver Detalles</a>
+          </div>
+        `;
+        ropaSection.innerHTML += productoHTML; /*Anade al contenedor*/
+      }
+    });
+  </script>
+</body>
+</html>

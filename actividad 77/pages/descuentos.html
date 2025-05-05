@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> <!--contiene información sobre la página-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Descuentos - Tienda Online Lulupa</title> <!--Título que figurara en la pestaña del navegador-->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50 d-flex flex-column min-vh-100">
+  <header class="bg-pink-500 text-white py-4 shadow-md">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-semibold text-center">Promociones y Descuentos</h1>
+    </div>
+  </header>
+
+  <nav class="bg-purple-800 text-white py-3"> <!--Barra de navegación con enlaces a otras secciones de la tienda, fondo violeta, texto blanco y espaciado-->
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center space-x-6">
+        <a href="../index.html" class="hover:text-pink-300">Inicio</a>
+        <a href="descuentos.html" class="hover:text-pink-300">Descuentos</a>
+        <a href="ropa.html" class="hover:text-pink-300">Ropa</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto py-6 px-4">
+    <section class="promociones"> <!--Contiene la alerta del descuento-->
+      <div class="bg-pink-100 border-l-4 border-pink-500 text-pink-700 p-4 rounded" role="alert"> <!--Fondo rosa, borde izquierdo rosa y texto rosa oscuro-->
+        <p class="font-bold">¡Oferta Especial!</p>
+        <p>Obtén un 10% de descuento en todos los productos hasta el domingo.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-purple-800 text-white py-4 mt-8"> <!--Pie de la página-->
+    <div class="container mx-auto text-center">
+      <p>© 2024 Mi Tienda Online. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

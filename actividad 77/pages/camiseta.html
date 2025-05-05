@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> <!--configuración inicial de la página-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Permite adaptación a dispositivos móviles-->
+    <title>Camiseta de Algodón - Lulupa</title> <!--Define el texto de la pestaña del navegador-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> <!--Fuente externa de Google Fonts-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> <!--Bootstrap para el diseño responsive-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> <!--Boostrap para Js-->
+</head>
+<body> <!--Cuerpo del documento-->
+    <header class="bg-pink-500 text-white py-4 shadow-md"> <!--Encabezado Fondo rosado, texto blanco, espaciado y sombra-->
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-semibold text-center">Camiseta de Algodón</h1>  <!--Nombre del producto con tamaño grande, fuente negrita, y alineación centrada-->
+        </div>
+    </header>
+
+    <main class="container py-6"> <!--Contenedor espaciado-->
+        <div class="row"> <!--Bootstrap Grid-->
+            <div class="col-md-6"> <!--columna izquierda asegurando la imagen-->
+                <img src="../img/camiseta.jpg" alt="Camiseta de Algodón" class="img-fluid"> <!-- Carga la imagen-->
+            </div>
+            <div class="col-md-6"> <!--Columna derecha con detalles del producto-->
+                <h2 class="text-xl font-bold">Camiseta de Algodón</h2>
+                <p><strong>Descripción:</strong> Disponible en talles s, m y l.</p>
+                <p><strong>Precio:</strong> $25,000</p>
+                <button class="btn btn-pink" id="agregarCarrito">Agregar al carrito</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-purple-800 text-white py-4 mt-8"> <!--Pie de página con fondo lila, texto blanco, espaciado y margen-->
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 Mi Tienda Online. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
